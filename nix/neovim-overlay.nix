@@ -79,7 +79,7 @@ with final.pkgs.lib; let
     # ^ bleeding-edge plugins from flake inputs
 
     catppuccin-nvim
-    which-key
+    which-key-nvim
   ];
 
   extraPackages = with pkgs; [
