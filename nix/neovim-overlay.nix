@@ -80,9 +80,20 @@ with final.pkgs.lib; let
 
     catppuccin-nvim
     which-key-nvim
+    tmux-nvim
+    neo-tree-nvim
+    nvim-autopairs
+
+    copilot-lua
+    copilot-cmp
+
+    nvim-dap
+    nvim-dap-ui
+
   ];
 
   extraPackages = with pkgs; [
+    nodejs-18_x
     # language servers, etc.
     lua-language-server
     nil # nix LSP

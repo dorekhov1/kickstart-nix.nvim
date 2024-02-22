@@ -58,7 +58,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
     local client = vim.lsp.get_client_by_id(ev.data.client_id)
 
     -- Attach plugins
-    require('nvim-navic').attach(client, bufnr)
+    -- require('nvim-navic').attach(client, bufnr)
 
     vim.cmd.setlocal('signcolumn=yes')
     vim.bo[bufnr].bufhidden = 'hide'
@@ -83,7 +83,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
     end, desc('[lsp] list workspace folders'))
     keymap.set('n', '<space>rn', vim.lsp.buf.rename, desc('[lsp] rename'))
     keymap.set('n', '<space>wq', vim.lsp.buf.workspace_symbol, desc('[lsp] workspace symbol'))
-    keymap.set('n', '<space>dd', vim.lsp.buf.document_symbol, desc('[lsp] document symbol'))
+    -- keymap.set('n', '<space>dd', vim.lsp.buf.document_symbol, desc('[lsp] document symbol'))
     keymap.set('n', '<M-CR>', vim.lsp.buf.code_action, desc('[lsp] code action'))
     keymap.set('n', '<M-l>', vim.lsp.codelens.run, desc('[lsp] run code lens'))
     keymap.set('n', '<space>cr', vim.lsp.codelens.refresh, desc('[lsp] refresh code lenses'))
