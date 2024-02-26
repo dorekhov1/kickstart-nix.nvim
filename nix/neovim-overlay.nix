@@ -93,7 +93,8 @@ with final.pkgs.lib; let
   ];
 
   extraPackages = with pkgs; [
-    nodejs-18_x
+    nodejs-18_x # needed for copilot
+
     # language servers, etc.
     lua-language-server
     nil # nix LSP
