@@ -80,9 +80,12 @@ vim.api.nvim_create_autocmd('LspAttach', {
     keymap.set('n', '<leader>f', function()
       vim.lsp.buf.format { async = true }
     end, desc('[lsp] format buffer'))
-    keymap.set('n', '<leader>th', function()
-      vim.lsp.inlay_hint(bufnr)
-    end, desc('[T]oggle inlay [H]ints'))
+    if client.server_capabilities.inlayHintProvider then
+        keymap.set('n', '<leader>th', function()
+          local current_setting = vim.lsp.inlay_hint.is_enabled(bufnr)
+          vim.lsp.inlay_hint.enable(bufnr, not current_setting)
+        end, desc('[T]oggle inlay [H]ints'))
+    end
 
     --keymap.set('n', '<leader>dd', vim.lsp.buf.document_symbol, desc('[lsp] document symbol'))
 

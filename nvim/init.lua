@@ -7,6 +7,10 @@ local wo = vim.wo
 g.mapleader = ' '
 g.maplocalleader = ' '
 
+-- <leader> key. Defaults to `\`. Some people prefer space.
+-- g.mapleader = ' '
+-- g.maplocalleader = ' '
+
 opt.compatible = false
 
 -- Enable true colour support
@@ -62,7 +66,6 @@ opt.updatetime = 250
 opt.timeoutlen = 300
 opt.completeopt = 'menuone,noselect'
 opt.scrolloff = 8
-
 
 opt.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
 
@@ -121,6 +124,8 @@ vim.diagnostic.config {
 
 g.editorconfig = true
 
+vim.opt.colorcolumn = '100'
+
 -- Native plugins
 cmd.filetype('plugin', 'indent', 'on')
 cmd.packadd('cfilter') -- Allows filtering the quickfix list with :cfdo
@@ -135,4 +140,3 @@ require("user.remaps")
 -- on the packpath when passing a file to the nvim command
 cmd.syntax('on')
 cmd.syntax('enable')
-
