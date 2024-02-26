@@ -28,4 +28,3 @@ api.nvim_create_autocmd('TermOpen', {
     vim.wo[0].spell = false
   end,
 })
-

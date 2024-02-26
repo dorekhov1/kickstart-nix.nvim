@@ -94,17 +94,22 @@ with final.pkgs.lib; let
 
   extraPackages = with pkgs; [
     nodejs-18_x # needed for copilot
-
     # language servers, etc.
     lua-language-server
     nil # nix LSP
   ];
+
 in {
   # This is the neovim derivation
   # returned by the overlay
   nvim-pkg = mkNeovim {
     plugins = all-plugins;
     inherit extraPackages;
+  };
+
+  # This can be symlinked in the devShell's shellHook
+  nvim-luarc-json = final.mk-luarc-json {
+    plugins = all-plugins;
   };
 
   # You can add as many derivations as you like.
