@@ -98,6 +98,7 @@ vim.keymap.set(
   { desc = 'dynamic workspace [S]ymbols' }
 )
 
+vim.keymap.set('n', '<leader>sm', telescope.extensions.manix.manix, { desc = '[m]anix (nix documentation)' })
 telescope.setup {
   defaults = {
     path_display = {
@@ -150,4 +151,5 @@ telescope.setup {
 }
 
 telescope.load_extension('fzy_native')
+telescope.load_extension('manix')
 -- telescope.load_extension('smart_history')

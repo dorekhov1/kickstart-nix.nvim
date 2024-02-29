@@ -122,24 +122,13 @@ vim.keymap.set('n', ']l', lright, { silent = true, desc = 'cycle loclist right' 
 vim.keymap.set('n', '[L', vim.cmd.lfirst, { silent = true, desc = 'first loclist entry' })
 vim.keymap.set('n', ']L', vim.cmd.llast, { silent = true, desc = 'last loclist entry' })
 
--- Resize splits
-local toIntegral = math.ceil
-vim.keymap.set('n', '<leader>w+', function()
-  local curWinWidth = vim.api.nvim_win_get_width(0)
-  vim.api.nvim_win_set_width(0, toIntegral(curWinWidth * 3 / 2))
-end, { silent = true, desc = 'inc window width' })
-vim.keymap.set('n', '<leader>w-', function()
-  local curWinWidth = vim.api.nvim_win_get_width(0)
-  vim.api.nvim_win_set_width(0, toIntegral(curWinWidth * 2 / 3))
-end, { silent = true, desc = 'dec window width' })
-vim.keymap.set('n', '<leader>h+', function()
-  local curWinHeight = vim.api.nvim_win_get_height(0)
-  vim.api.nvim_win_set_height(0, toIntegral(curWinHeight * 3 / 2))
-end, { silent = true, desc = 'inc window height' })
-vim.keymap.set('n', '<leader>h-', function()
-  local curWinHeight = vim.api.nvim_win_get_height(0)
-  vim.api.nvim_win_set_height(0, toIntegral(curWinHeight * 2 / 3))
-end, { silent = true, desc = 'dec window height' })
+vim.keymap.set("n", "<C-Up>", "<cmd>resize +2<cr>", { desc = "Increase window height" })
+vim.keymap.set("n", "<C-Down>", "<cmd>resize -2<cr>", { desc = "Decrease window height" })
+vim.keymap.set("n", "<C-Left>", "<cmd>vertical resize -2<cr>", { desc = "Decrease window width" })
+vim.keymap.set("n", "<C-Right>", "<cmd>vertical resize +2<cr>", { desc = "Increase window width" })
 
+vim.keymap.set("v", "<", "<gv")
+vim.keymap.set("v", ">", ">gv")
 
+vim.keymap.set("n", "<leader>Q", "<cmd>qa<cr>", { desc = "[Q]uit all" })
 -- vim: ts=2 sts=2 sw=2 et

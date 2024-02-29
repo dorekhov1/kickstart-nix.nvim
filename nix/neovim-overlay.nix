@@ -90,9 +90,12 @@ with final.pkgs.lib; let
     nvim-dap
     nvim-dap-ui
 
+    yanky-nvim
+    telescope-manix
   ];
 
   extraPackages = with pkgs; [
+    manix # nix documentation
     nodejs-18_x # needed for copilot
     # language servers, etc.
     lua-language-server

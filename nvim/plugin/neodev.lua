@@ -23,4 +23,5 @@ require('neodev').setup {
     end
   end,
   lspconfig = false,
+  library = { plugins = { "nvim-dap-ui" }, types = true },
 }
