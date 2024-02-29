@@ -7,18 +7,12 @@ local wo = vim.wo
 g.mapleader = ' '
 g.maplocalleader = ' '
 
--- <leader> key. Defaults to `\`. Some people prefer space.
--- g.mapleader = ' '
--- g.maplocalleader = ' '
-
 opt.compatible = false
 
 -- Enable true colour support
 if fn.has('termguicolors') then
   opt.termguicolors = true
 end
-
--- See :h <option> to see what the options do
 
 -- Search down into subfolders
 opt.path = vim.o.path .. '**'
@@ -51,14 +45,13 @@ opt.shiftwidth = 4
 opt.smartindent = true
 opt.colorcolumn = '99'
 
-
 opt.foldenable = true
 opt.history = 2000
 opt.nrformats = 'bin,hex' -- 'octal'
 opt.undofile = true
 opt.splitright = true
 opt.splitbelow = true
-opt.cmdheight = 0
+--opt.cmdheight = 0
 
 opt.mouse = 'a'
 opt.breakindent = true
