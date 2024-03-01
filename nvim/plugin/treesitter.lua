@@ -83,6 +83,7 @@ configs.setup {
 
 require('treesitter-context').setup {
   max_lines = 3,
+  separator = "-"
 }
 
 require('ts_context_commentstring').setup()
